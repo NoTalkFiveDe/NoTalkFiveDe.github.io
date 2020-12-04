@@ -15,11 +15,16 @@
 
 4. [游鑫](https://github.com/JackYou-x)
 
+5. [游叶康](https://github.com/Alte-yyk)  
+
+6. [张轩仪](https://github.com/HahSZ) 
+
+7. [谢剑昆](https://github.com/xiejiankun)  
+
 
 ## 个人博客网址
 
 名字 | 网址
 ----|----
 杨凯 | https://jaxvanyang.github.io/
-游鑫 | https://jackyou-x.github.io/yx_blog/
 待填 | 
