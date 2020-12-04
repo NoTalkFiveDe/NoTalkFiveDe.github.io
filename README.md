@@ -21,4 +21,5 @@
 名字 | 网址
 ----|----
 杨凯 | https://jaxvanyang.github.io/
+游鑫 | https://jackyou-x.github.io/yx_blog/
 待填 | 
