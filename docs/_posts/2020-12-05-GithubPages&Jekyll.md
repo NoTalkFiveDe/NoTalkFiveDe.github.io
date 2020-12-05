@@ -1,6 +1,7 @@
 ﻿---
 layout: post
 date: 2020-12-05
+author: "余秋林"
 title: "基于Jekyll和Github Page搭建个人博客"
 tags: "blog"
 ---
