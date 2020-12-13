@@ -1,0 +1,200 @@
+<blockquote>
+  <p>一些需要掌握的 Git 命令<br />
+所有的用法都可以在<a href="https://gitee.com/progit/">《Pro Git》</a>中找到</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="git-的基本概念">Git 的基本概念</h2>
+<hr />
+
+<h3 id="提交版本">（提交）版本</h3>
+
+<p>一次<strong>提交</strong>可以看作是一个<strong>版本</strong>，它包含了该次提交的所有文件</p>
+
+<h3 id="提交的哈希值hash">提交的哈希值（hash）</h3>
+
+<p>每个提交独一无二的身份表示，需要通过它来切换各个版本，可通过 <code class="highlighter-rouge">git log</code> 查看</p>
+
+<h3 id="版本库">版本库</h3>
+
+<p><code class="highlighter-rouge">Git</code> 的版本库可以理解成一个存放了各个提交版本的数据库，你可以从中恢复保存的历史版本</p>
+
+<h3 id="忽略文件">忽略文件</h3>
+
+<p>在 <code class="highlighter-rouge">.gitignore</code> 中指定的文件都不会被保存在版本库里，多是测试文件</p>
+
+<h3 id="head-指针"><code class="highlighter-rouge">HEAD</code> 指针</h3>
+
+<p><code class="highlighter-rouge">HEAD</code> 指向一个版本库里的一个提交版本，表示当前的工作是基于某一个版本，它是切换版本的核心</p>
+
+<h3 id="文件的三种状态">文件的三种状态：</h3>
+
+<ol>
+  <li>
+    <p>已提交（commited）：表示已被 Git 安全地保存在本地数据库</p>
+  </li>
+  <li>
+    <p>已修改（modified）：表示修改了某个文件，但还没有提交保存</p>
+  </li>
+  <li>
+    <p>已暂存（staged）：表示把已修改的文件放在下次提交时要保存的清单中</p>
+  </li>
+</ol>
+
+<p>其实文件还有一种状态：忽略（ignored），表示 Git 不会保存该文件</p>
+
+<p><br /></p>
+
+<h2 id="常用的-git-命令">常用的 Git 命令</h2>
+<hr />
+
+<blockquote>
+  <p><code class="highlighter-rouge">[]</code> 表示可选项；<code class="highlighter-rouge">&lt;&gt;</code> 表示必填项</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="需要掌握的">需要掌握的</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>简介</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">git add &lt;文件或路径&gt;</code></td>
+      <td>将文件或路径加入<strong>暂存区</strong></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git commit [-m] [-a]</code></td>
+      <td>将暂存区的文件提交到 <code class="highlighter-rouge">Git</code> 的<strong>版本库</strong></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git checkout &lt;文件或路径&gt;</code></td>
+      <td>将指定文件或路径恢复到当前版本里的样子</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git log [-n]</code></td>
+      <td>查看提交信息</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git clone &lt;远程仓库地址&gt;</code></td>
+      <td>克隆远程仓库，会将远程仓库的根目录完整复制到当前目录下</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git remote -v</code></td>
+      <td>查看远程仓库信息</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git remote add &lt;远程仓库名&gt; &lt;仓库地址&gt;</code></td>
+      <td>添加远程仓库，远程仓库名需要自己取</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git push [-u] &lt;远程仓库名&gt; &lt;远程分支&gt;</code></td>
+      <td>将本地仓库的当前分支推送到远程仓库的指定分支</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git pull</code></td>
+      <td>拉取远程仓库，会将 <code class="highlighter-rouge">HEAD</code> 改为和远程仓库里的一样</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git fetch</code></td>
+      <td>抓取远程仓库的数据，但是不会影响 <code class="highlighter-rouge">HEAD</code> 的指向</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="与分支相关的">与分支相关的</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>简介</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">git branch &lt;分支名&gt;</code></td>
+      <td>添加新的分支</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git switch &lt;分支名&gt;</code></td>
+      <td>切换到指定分支</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git branch -d &lt;分支名&gt;</code></td>
+      <td>删除指定分支</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git merge &lt;另一分支&gt;</code></td>
+      <td>将当前分支和另一分支合并</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="了解即可的">了解即可的</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>简介</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">git reset &lt;提交的哈希值&gt;</code></td>
+      <td>回到哈希值对应的版本</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">git rebase &lt;另一分支&gt;</code></td>
+      <td>也是合并，但是会生成更干净的提交历史</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h2 id="最佳实践">最佳实践</h2>
+<hr />
+
+<ol>
+  <li>
+    <p>给远程仓库起个有意义的名字，例如</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c"># 将默认的远程仓库名 origin 改成 github</span>
+ git remote rename origin github
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>设置默认推拉仓库分支，例如：</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c"># 推送到 github 表示的远程仓库的 master 分支，并设置其为默认推拉仓库分支</span>
+ git push <span class="nt">-u</span> github master
+    
+ <span class="c"># 然后就可以只用 git push，而不需要指定仓库分支</span>
+ git push
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>设置命令别名，例如：</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c"># 设置别名 info</span>
+ git config <span class="nt">--global</span> alias.info <span class="s1">'log --pretty=format:"%h - %an, %ar : %s" --graph'</span>
+
+ <span class="c"># 然后就可以用 git info 查看格式化过的提交信息</span>
+ git push
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>多使用分支，尤其是在多人协作的仓库上，尽量在自己新建的分支上修改代码，需要提交时，和主分支<em>合并</em>或<em>衍合</em>后再提交</p>
+  </li>
+  <li>
+    <p>在推送到远程仓库前，最好先拉取远程仓库</p>
+  </li>
+</ol>
