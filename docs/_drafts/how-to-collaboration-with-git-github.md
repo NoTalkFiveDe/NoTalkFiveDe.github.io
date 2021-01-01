@@ -3,7 +3,7 @@ title: 如何使用 Git/GitHub 协作
 author: 杨凯
 ---
 
-![GitHub flow](../assets/img/github-flow.png)
+![GitHub flow](../assets/img/github-flow.png)  
 
 > GitHub flow 的核心优势在于其流程带来的自动化可能性，能够做到其它流程无法实现的检查过程，并极大简化开发团队的体力劳动，真正发挥自身的价值。  
 
@@ -22,6 +22,22 @@ author: 杨凯
 git push origin my_branch:my_branch
 ```
 
-然后在 GitHub 上创建一个 PR，也就是 Pull requests，直译过来是“拉取请求”，然会就会 GitHub 就会比较这两个分支，所有人都可以看到它们的不同，比起单纯的分支来说，PR
+然后在 GitHub 上创建一个 `PR`，也就是 `Pull requests`，直译过来是“拉取请求”，然会就会 GitHub 就会比较这两个分支，所有人都可以看到它们的不同，比起自己一个人在分支上埋头苦干，PR 会释放一个信号告诉大家我这个分支需要你们来看一看以引起讨论。  
+
+![create a PR](../assets/img/create-a-pr.png)  
+
+除了 PR 还有一种方式可以在 GitHub 上进行讨论，那就是 `Issues`，翻译过来就是“议题”，常用于 BUG 的提交，也可以在这里进行一般的讨论。Issues 也有两种状态，`Open` 和 `Closed`，当议题里提到的任务完成或者 BUG 修复后就可以将议题关闭，如果以后又碰到相同的问题还可以重新打开。  
+
+GitHub 上所有可以输入评论的地方都可以使用 `@`，如果你想提醒某个人，你就可以在相应的地方 `@` TA。  
+
+另外也可以使用 GitHub 的任务分配功能，还可以设定具体的完成时间确保项目顺利进行。  
+
+![Issues assign](../assets/img/issues-assign.png)  
+<br>
 
 ## 3. 合并到主分支
+当分支上的内容都经过测试后就可以将其合并到主分支了，然后删除已经合并的分支。  
+<br>
+
+## 后记
+我知道大家都很忙，很难碰到大家都有空的时间，比起社交软件上即时的聊天来说，可能 GitHub 上的讨论更适合我们。所以我希望大家将和协作有关的讨论都搬到 GitHub 上，毕竟很多开源软件用的都是这种方法，我相信它一定可以提升我们的协作能力，也能提高我们的开发效率。  
