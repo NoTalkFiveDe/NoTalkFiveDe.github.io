@@ -22,7 +22,7 @@ author: 杨凯
 git push origin my_branch:my_branch
 ```
 
-然后在 GitHub 上创建一个 `PR`，也就是 `Pull requests`，直译过来是“拉取请求”，然会就会 GitHub 就会比较这两个分支，所有人都可以看到它们的不同，比起自己一个人在分支上埋头苦干，PR 会释放一个信号告诉大家我这个分支需要你们来看一看以引起讨论。  
+然后在 GitHub 上创建一个 `PR`，也就是 `Pull requests`，直译过来是“拉取请求”，然后就会 GitHub 就会比较这两个分支，所有人都可以看到它们的不同，比起自己一个人在分支上埋头苦干，PR 会释放一个信号告诉大家我这个分支需要你们来看一看以引起讨论。  
 
 ![create a PR](../assets/img/create-a-pr.png)  
 
